@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DndModule } from 'ngx-drag-drop';
+import { MGKanbanComponent } from './mg-kanban.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MGKanbanComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    DndModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MGKanbanComponent]
 })
 export class AppModule { }

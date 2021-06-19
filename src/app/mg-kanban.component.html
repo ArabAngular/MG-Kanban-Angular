@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="layout-padding row my-3">
+
+
+
+        <div class="col-md-4 " *ngFor="let taskBoard of taskBoards;index as boardIndx">
+
+            <div class="shadow">
+                <div style="height: 5px;" [ngStyle]="{backgroundColor: taskBoard.color}">
+
+                </div>
+                <h3 class="py-3  text-center">{{taskBoard.title}}</h3>
+
+
+                <div *ngFor="let story of taskBoard.stories;index as storyIndx" class="border rounded">
+
+                    <h4 class="bg-primary py-2 text-light text-center mb-0">{{story.title}}</h4>
+                    <div [dndDropzone]="[story.id]" dndEffectAllowed="move" (dndDrop)="onDrop($event, boardIndx,storyIndx)" class="dndList">
+
+
+                        <div dndPlaceholderRef class="dndPlaceholder">
+                        </div>
+
+                        <div class="card rounded m-1" *ngFor="let task of story.tasks" [dndDraggable]="task" [dndType]="task.story" dndEffectAllowed="move" (dndMoved)="onDragged(task, boardIndx, storyIndx )">
+                            <div class="card-body">
+                                <h5>{{task.title}}</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

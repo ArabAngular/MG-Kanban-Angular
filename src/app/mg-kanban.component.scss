@@ -1,0 +1,21 @@
+.dndList {
+    transition: all 300ms ease;
+    min-width: 200px;
+    min-height: 200px;
+    overflow-y: auto;
+    &.dndDragover {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-color: green;
+    }
+}
+
+.dndDragging {
+    border: 1px solid green;
+}
+
+.dndPlaceholder {
+    min-height: 50px;
+    border: 1px dashed green;
+    background-color: rgba(0, 0, 0, 0.1);
+}
